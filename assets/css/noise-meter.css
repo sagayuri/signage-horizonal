@@ -1,0 +1,368 @@
+@charset "UTF-8";
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  color: #333333;
+}
+
+@font-face {
+  font-family: "dseg";
+  src: url("../font/DSEG7Modern-Bold.ttf") format("ttf");
+  src: url("../font/DSEG7Modern-Bold.woff") format("woff");
+  src: url("../font/DSEG7Modern-Bold.woff2") format("woff2");
+}
+.noiseMeter {
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.noiseMeter__illust--top {
+  width: 20%;
+  min-width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.noiseMeter__illust--couple {
+  width: 10%;
+  min-width: 200px;
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+.noiseMeter__illust--couple img {
+  width: 100%;
+  height: auto;
+}
+.noiseMeter__illust--family {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter__illust--family {
+    width: 40%;
+    top: 40%;
+    left: 60%;
+  }
+  .noiseMeter__illust--family img {
+    width: 100%;
+  }
+}
+.noiseMeter__illust--town {
+  position: absolute;
+  bottom: 5%;
+}
+.noiseMeter__illust--bottom {
+  position: absolute;
+  bottom: 0;
+}
+.noiseMeter .header {
+  width: 100%;
+  padding: 12px 32px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 26, 0, 0.5);
+  color: #fff;
+}
+.noiseMeter .header__title {
+  font-weight: bold;
+  font-size: 56px;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .header__title {
+    font-size: 40px;
+  }
+}
+.noiseMeter .header__date {
+  font-weight: bold;
+  font-size: 56px;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .header__date {
+    font-size: 40px;
+  }
+}
+.noiseMeter .header__date span {
+  font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .header__date span {
+    font-size: 18px;
+  }
+}
+.noiseMeter .dataWrapper {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter .dataWrapper {
+    height: 80%;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter .noiseWrapper {
+    width: 100%;
+  }
+}
+.noiseMeter .noiseWrapper__title {
+  width: 50%;
+  min-width: 150px;
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter .vibrationWrapper {
+    width: 100%;
+  }
+}
+.noiseMeter .vibrationWrapper__title {
+  width: 50%;
+  min-width: 150px;
+}
+.noiseMeter .valueWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 32px;
+}
+.noiseMeter .valueWrapper__strings {
+  font-size: 298px;
+  font-weight: bold;
+  color: #f4c403;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .valueWrapper__strings {
+    font-size: 198px;
+  }
+}
+.noiseMeter .valueWrapper__db {
+  min-width: 80px;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .valueWrapper__db {
+    width: 20%;
+  }
+}
+.noiseMeter--default {
+  background-image: url(../images/noise-meter/blackBoard/base_blackBoard.jpg);
+}
+
+.noiseMeter--flatPanel {
+  background-image: url(../images/noise-meter/flatPanel/base.jpg);
+}
+.noiseMeter--flatPanel .header {
+  background: rgba(8, 45, 133, 0.8);
+}
+.noiseMeter--flatPanel .valueWrapper__strings {
+  width: 100%;
+  padding-left: 56px;
+  margin-top: 32px;
+  background-image: url(../images/noise-meter/flatPanel/display.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--flatPanel .valueWrapper__strings {
+    width: 50%;
+  }
+}
+.noiseMeter--flatPanel .valueWrapper__db {
+  width: 25%;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--flatPanel .valueWrapper__db {
+    width: 18%;
+  }
+}
+
+.noiseMeter--paper {
+  background-image: url(../images/noise-meter/paper/base_paper.jpg);
+}
+.noiseMeter--paper .header {
+  background: rgba(8, 45, 133, 0.8);
+}
+.noiseMeter--paper .valueWrapper__strings {
+  width: 100%;
+  padding-left: 56px;
+  margin-top: 32px;
+  background-image: url(../images/noise-meter/paper/blackBoard_small.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--paper .valueWrapper__strings {
+    width: 50%;
+  }
+}
+.noiseMeter--paper .valueWrapper__db {
+  width: 25%;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--paper .valueWrapper__db {
+    width: 18%;
+  }
+}
+
+.noiseMeter--eva {
+  background-image: url(../images/noise-meter/eva/bg_noise-meter.png);
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva {
+    background-position: left;
+  }
+}
+.noiseMeter--eva .header {
+  width: 75%;
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", sans-serif;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva .header {
+    width: 100%;
+  }
+}
+.noiseMeter--eva .dataWrapper {
+  width: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva .dataWrapper {
+    width: 100%;
+    padding: 0 32px;
+    justify-content: center;
+    gap: 80px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva .dataWrapper .noiseWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+.noiseMeter--eva .dataWrapper .noiseWrapper__title {
+  width: 30%;
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva .dataWrapper .vibrationWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+.noiseMeter--eva .dataWrapper .vibrationWrapper__title {
+  width: 30%;
+}
+.noiseMeter--eva .valueWrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+}
+.noiseMeter--eva .valueWrapper__strings {
+  font-family: "dseg";
+  font-size: 180px;
+  font-weight: bold;
+  color: #ffab00;
+  text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .valueWrapper__strings {
+    font-size: 98px;
+  }
+}
+.noiseMeter--eva .valueWrapper__db {
+  font-size: 124px;
+  font-weight: bold;
+  color: #ffab00;
+  text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .valueWrapper__db {
+    font-size: 70px;
+  }
+}
+.noiseMeter--eva--bottom {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1200px) {
+  .noiseMeter--eva--bottom {
+    width: 100%;
+  }
+}

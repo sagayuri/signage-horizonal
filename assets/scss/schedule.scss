@@ -1,0 +1,399 @@
+@use "reset" as r;
+@use "mixin" as m;
+@use "common" as c;
+
+.schedule {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  @include m.mq(vertical) {
+    padding-top: 80px;
+  }
+  @at-root {
+    .default#{&} {
+      background-image: url(../images/schedule/blackBoard_bg_base.jpg);
+    }
+    .flatPanel#{&} {
+      background-image: url(../images/schedule/flatPanel_bg_base.jpg);
+    }
+    .paper#{&} {
+      background-image: url(../images/schedule/paper_bg_base.jpg);
+    }
+    .eva#{&} {
+      background-image: url(../images/schedule/eva_bg_base.png);
+      background-color: c.$eva-black;
+      font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+        "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN",
+        "Hiragino Mincho ProN", sans-serif;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
+  &__header {
+    height: 12%;
+    max-height: 110px;
+    padding: 32px;
+    margin-bottom: 64px;
+    color: c.$misao-blue;
+    @include m.mq(vertical) {
+      max-height: 147px;
+    }
+
+    @at-root {
+      &--eva#{&} {
+        color: #fff;
+      }
+    }
+
+    h1 {
+      font-size: 64px;
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 48px;
+    }
+  }
+
+  &__title {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__illust {
+    position: absolute;
+    &--top {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__bar {
+    position: absolute;
+    &--top {
+      top: 0;
+      left: 0;
+    }
+    &--bottom {
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__content {
+    width: calc(100% - 64px);
+    height: 64%;
+    padding: 40px 56px;
+    margin: 0 auto;
+    background-image: url(../images/schedule/paper_bg_content.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    @at-root {
+      &--paper#{&} {
+        box-shadow: 0 0 10px rgba(139, 69, 19, 0.25);
+      }
+      &--eva#{&} {
+        background: none;
+      }
+    }
+  }
+  &__contentMag {
+    position: absolute;
+    &--red {
+      top: 20px;
+      left: 20px;
+    }
+    &--blue {
+      top: 20px;
+      right: 20px;
+    }
+    &--yellow {
+      bottom: 20px;
+      left: 20px;
+    }
+    &--green {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+//スケジュール欄
+.scheduleList {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  @include m.mq(vertical) {
+    height: 100%;
+  }
+
+  &__item {
+    height: calc(100% / 7);
+    padding: 8px;
+    border-bottom: dotted 5px #ddd;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    &:last-of-type {
+      border: none;
+    }
+    @at-root {
+      &--eva {
+        border-bottom: solid 3px #cd0011;
+        .scheduleList__date {
+          font-family: "Noto Sans JP", sans-serif;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .scheduleList__dayOfWeek {
+          font-family: "Noto Sans JP", sans-serif;
+          font-family: "Roboto", sans-serif;
+        }
+      }
+      &--holiday#{&} {
+        .scheduleList {
+          &__date {
+            color: c.$red;
+          }
+          &__dayOfWeek {
+            color: c.$red;
+          }
+        }
+      }
+      &--sat#{&} {
+        .scheduleList {
+          &__date {
+            color: c.$misao-blue;
+          }
+          &__dayOfWeek {
+            color: c.$misao-blue;
+          }
+        }
+      }
+      &--sun#{&} {
+        .scheduleList {
+          &__date {
+            color: c.$red;
+          }
+          &__dayOfWeek {
+            color: c.$red;
+          }
+        }
+      }
+    }
+  }
+  &__date {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  &__dayOfWeek {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  &__plan {
+    font-weight: bold;
+    font-size: 48px;
+  }
+}
+
+.stationary {
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+}
+
+.footer {
+  height: 15%;
+  margin: 32px 0;
+  @include m.mq(vertical) {
+    margin: 48px 0;
+  }
+  &__content {
+    width: calc(100% - 64px);
+    height: 100%;
+    padding: 24px 64px;
+    margin: 0 auto;
+    background-image: url(../images/schedule/paper_bg_content.jpg);
+    position: relative;
+    @at-root {
+      &--paper#{&} {
+        box-shadow: 0 0 10px rgba(139, 69, 19, 0.25);
+      }
+      &--eva#{&} {
+        background-image: none;
+        background-color: #fff;
+      }
+    }
+  }
+  &__contentMag {
+    position: absolute;
+    &--red {
+      top: 16px;
+      left: 16px;
+    }
+    &--blue {
+      top: 16px;
+      right: 16px;
+    }
+    &--yellow {
+      bottom: 16px;
+      left: 16px;
+    }
+    &--green {
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+  &__contentWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    @include m.mq(vertical) {
+      flex-direction: column;
+    }
+  }
+  &__logo {
+    width: 15%;
+    @include m.mq(vertical) {
+      width: 28%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &__info {
+    padding: 16px 0;
+    flex-basis: 85%;
+    background-color: #fff;
+    overflow: hidden;
+    @include m.mq(vertical) {
+      width: 100%;
+    }
+
+    @at-root {
+      &--eva#{&} {
+        background-color: transparent;
+      }
+    }
+  }
+  &__infoBox {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  &__infoText {
+    width: fit-content;
+    font-weight: bold;
+    font-size: 40px;
+
+    @at-root {
+      &--eva#{&} {
+        font-size: 56px;
+        color: c.$eva-black;
+      }
+    }
+  }
+}
+
+.scheduleList__item--eva {
+  @at-root {
+    .scheduleList__item--sat#{&} {
+      .scheduleList__date {
+        color: c.$eva-blue;
+      }
+      .scheduleList__dayOfWeek {
+        color: c.$eva-blue;
+      }
+    }
+
+    .scheduleList__item--sun#{&} {
+      .scheduleList__date {
+        color: c.$eva-red;
+      }
+      .scheduleList__dayOfWeek {
+        color: c.$eva-red;
+      }
+    }
+
+    .scheduleList__item--holiday#{&} {
+      .scheduleList__date {
+        color: c.$eva-red;
+      }
+      .scheduleList__dayOfWeek {
+        color: c.$eva-red;
+      }
+    }
+  }
+}
+
+.js-active {
+  animation: animate-banner 15s linear infinite;
+}
+
+@keyframes animate-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.toastWrapper {
+  width: 100%;
+  max-width: 959px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  visibility: hidden;
+
+  &__content {
+    padding: 56px 80px;
+    margin-bottom: 32px;
+    border-radius: 20px;
+    border: 8px solid #444;
+    background-color: #DDD;
+    box-shadow: 10px 10px 10px rgba(68,68,68,0.25);
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    &--alert {
+      border: 8px solid #FFC700;
+      background-color: rgba(255,246,212,0.8);
+    }
+
+    &--delivery {
+      border: 8px solid #057BAE;
+      background-color: rgba(210,242,255,0.8);
+    }
+
+    &--time {
+      border: 8px solid #05AE34;
+      background-color: rgba(208,255,221,0.8);
+    }
+  }
+}

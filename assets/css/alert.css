@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  color: #333333;
+}
+
+.alertContentOpening {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.alertContentOpening--blue.alertContentOpening {
+  background-image: url(../images/alert/blue/alert_base_opening.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.alertContentOpening--red.alertContentOpening {
+  background-image: url(../images/alert/red/alert_base_opening.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.alertContentOpening--yellow.alertContentOpening {
+  background-image: url(../images/alert/yellow/alert_base_opening.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.fadeIn.alertContentOpening {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@-webkit-keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.alertContent {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.alertContent--blue.alertContent {
+  background-image: url(../images/alert/blue/alert_main.jpg);
+}
+
+.alertContent--red.alertContent {
+  background-image: url(../images/alert/red/alert_main.jpg);
+}
+
+.alertContent--yellow.alertContent {
+  background-image: url(../images/alert/yellow/alert_main.jpg);
+}
+
+.slideIn.alertContent {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-animation-name: slideIn;
+          animation-name: slideIn;
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateX(180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.alertContent__blink {
+  padding: 32px 56px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 80px;
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", sans-serif;
+  text-align: center;
+  color: white;
+  -webkit-animation-name: blinking;
+          animation-name: blinking;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.alertContent__blink--blue.alertContent__blink {
+  border: 5px solid #082d85;
+}
+
+.alertContent__blink--red.alertContent__blink {
+  border: 5px solid #cd0011;
+}
+
+.alertContent__blink--yellow.alertContent__blink {
+  border: 5px solid #ffd900;
+}
+
+@media screen and (max-width: 1200px) {
+  .alertContent__blink {
+    width: 80%;
+  }
+}
+@-webkit-keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .alertContent {
+    background-position: left;
+  }
+}

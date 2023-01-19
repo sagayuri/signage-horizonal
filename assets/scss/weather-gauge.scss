@@ -1,0 +1,236 @@
+@use "reset" as r;
+@use "mixin" as m;
+@use "common" as c;
+
+.Weather_gauge {
+  padding: 20px;
+  background-color: #e1e9f5;
+  color: #495057;
+  overflow: scroll;
+  &__List {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    @include m.mq(vertical) {
+      :last-of-type {
+        width: calc(100% - 20px);
+      }
+    }
+  }
+  &__Item {
+    width: -webkit-calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 20px);
+    height: 31vh;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #fff;
+    position: relative;
+    -moz-box-shadow: 0px 3px 26px -8px rgba(7, 48, 122, 0.2);
+    -webkit-box-shadow: 0px 3px 26px -8px rgba(7, 48, 122, 0.2);
+    -ms-box-shadow: 0px 3px 26px -8px rgba(7, 48, 122, 0.2);
+    box-shadow: 0px 3px 26px -8px rgba(7, 48, 122, 0.2);
+    box-sizing: border-box;
+    @include m.mq(sp) {
+      width: calc(100% - 20px);
+    }
+    @include m.mq(vertical) {
+      width: calc(50% - 20px);
+      max-height: 360px;
+    }
+    @at-root {
+      &--Humidity#{&} {
+        background: url(../images/weather-gauge/humidity/humidity_61-70.png) 50%
+          50% no-repeat;
+        background-color: #fff;
+      }
+      &--Pressure#{&} {
+        background: url(../images/weather-gauge/bg_pressure.png) 50% 50%
+          no-repeat;
+        background-color: #fff;
+      }
+      &--Direction#{&} {
+        background: url(../images/weather-gauge/wind-direction/wind_nnw.png) 50%
+          50% no-repeat;
+        background-color: #fff;
+      }
+      &--Uvi#{&} {
+        background-color: #c8787a; /*非常に強い*/
+        /*#d59369 強い*/
+        /*#ccb664 中程度*/
+        /*#58779a 弱い*/
+      }
+      &--Wbgt#{&} {
+        background-color: #d8a861; /*厳重警戒*/
+        /*#c8787a 危険*/
+        /*#c6b563 警戒*/
+        /*#49989c 注意*/
+        /*#58779a ほぼ安全*/
+      }
+    }
+  }
+  &__Title {
+    font-size: 36px;
+    font-weight: bold;
+    @at-root {
+      &--White#{&} {
+        color: #fff;
+      }
+    }
+    &::before {
+      width: 45px;
+      height: 40px;
+      margin-right: 8px;
+      content: "";
+      position: relative;
+      display: inline-block;
+      top: 7px;
+    }
+    @at-root {
+      &--Temp#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_temp.png) 0 0
+          no-repeat;
+      }
+      &--Humidity#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_humidity.png) 0 0
+          no-repeat;
+      }
+      &--Pressure#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_pressure.png) 0 0
+          no-repeat;
+      }
+      &--Direction#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_wind_direction.png) 0
+          0 no-repeat;
+      }
+      &--Speed#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_wind_speed.png) 0 0
+          no-repeat;
+      }
+      &--Uvi#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_uvi.png) 0 0
+          no-repeat;
+      }
+      &--Sunrise#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_sunrise.png) 0 0
+          no-repeat;
+      }
+      &--Rainfall#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_rainfall.png) 0 0
+          no-repeat;
+      }
+      &--Wbgt#{&}::before {
+        background: url(../images/weather-gauge/icons/icon_wbgt.png) 0 0
+          no-repeat;
+      }
+    }
+  }
+  &__Value {
+    font-size: 48px;
+    font-weight: bold;
+    &--Unit {
+      font-size: 24px;
+    }
+    @at-root {
+      &--Humidity#{&} {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &--Pressure#{&} {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 36px;
+      }
+      &--Direction#{&} {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 36px;
+      }
+      &--White#{&} {
+        color: #fff;
+      }
+    }
+    &--Average {
+      font-size: 24px;
+      &::before {
+        width: 39px;
+        height: 34px;
+        margin-right: 4px;
+        content: "";
+        position: relative;
+        top: 7px;
+        display: inline-block;
+        background: url(../images/weather-gauge/wind-speed/speed_90degrees.png)
+          0 0 no-repeat;
+        background-size: contain;
+      }
+    }
+    &--Maximum {
+      font-size: 24px;
+      &::before {
+        width: 39px;
+        height: 34px;
+        margin-right: 4px;
+        content: "";
+        position: relative;
+        top: 7px;
+        display: inline-block;
+        background: url(../images/weather-gauge/wind-speed/speed_45degrees.png)
+          0 0 no-repeat;
+        background-size: contain;
+      }
+    }
+    &--Ja {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &--Numbers {
+      margin: 0 8px 0 4px;
+      font-size: 48px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    &--Time {
+      font-size: 24px;
+    }
+  }
+  &__Other {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    &--Min {
+      font-size: 18px;
+      font-weight: bold;
+      color: #5d87b7;
+    }
+    &--Max {
+      font-size: 18px;
+      font-weight: bold;
+      color: #cf737a;
+    }
+    &--Day {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &--Numbers {
+      margin: 0 4px 0 8px;
+      display: inline-block;
+      font-size: 24px;
+      @include m.mq(sp) {
+        width: fit-content;
+      }
+    }
+  }
+}

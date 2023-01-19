@@ -1,0 +1,274 @@
+@use "reset" as r;
+@use "mixin" as m;
+@use "common" as c;
+@use "font" as f;
+
+.weatherForecast {
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @at-root {
+    .default#{&} {
+      background-image: url(../images/weather-forecast/blackBoard/base_blackBoard.jpg);
+    }
+    .flatPanel#{&} {
+      background-image: url(../images/weather-forecast/flatPanel/base.jpg);
+    }
+    .paper#{&} {
+      background-image: url(../images/weather-forecast/paper/base_paper.jpg);
+    }
+    .eva#{&} {
+      background-color: c.$eva-black;
+      font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+        "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN",
+        "Hiragino Mincho ProN", sans-serif;
+      color: #fff;
+    }
+  }
+  .header {
+    max-height: 90px;
+    padding: 24px;
+    margin-bottom: 80px;
+    @include m.mq(tab) {
+      max-height: 104px;
+    }
+    &--eva {
+      @include m.mq(tab) {
+        margin-bottom: 164px;
+      }
+    }
+    &__title {
+      width: fit-content;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 64px;
+      color: c.$misao-blue;
+      &--eva {
+        color: #fff;
+      }
+    }
+  }
+  &__illust {
+    position: absolute;
+    &--top {
+      top: 0;
+      left: 0;
+    }
+    &--town {
+      left: 0;
+      bottom: 7%;
+      @include m.mq(vertical) {
+        bottom: 3%;
+      }
+    }
+    &--bottom {
+      left: 0;
+      bottom: 0;
+    }
+  }
+  &__content {
+    width: calc(100% - 64px);
+    padding: 32px 24px;
+    margin: 0 auto;
+    font-weight: bold;
+    @include m.mq(tab) {
+      padding: 56px 24px;
+    }
+    &--default {
+      background-color: #fefefe;
+    }
+  }
+}
+.weatherList {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  @include m.mq(vertical) {
+    flex-direction: column;
+    gap: 32px;
+  }
+  &__item {
+    width: calc(100% / 7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    @include m.mq(vertical) {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__day {
+    font-size: 40px;
+    @at-root {
+      /*土曜*/
+      &--sat#{&} {
+        color: c.$misao-blue;
+      }
+      /*日曜*/
+      &--sun#{&} {
+        color: c.$red;
+      }
+      /*祝日*/
+      &--holiday#{&} {
+        color: c.$red;
+      }
+    }
+  }
+  &__dayOfWeek {
+    font-size: 32px;
+    @at-root {
+      /*土曜*/
+      &--sat#{&} {
+        color: c.$misao-blue;
+      }
+      /*日曜*/
+      &--sun#{&} {
+        color: c.$red;
+      }
+      /*祝日*/
+      &--holiday#{&} {
+        color: c.$red;
+      }
+    }
+  }
+  &__temperature {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    font-size: 32px;
+    &--max {
+      color: c.$red;
+    }
+    &--min {
+      color: c.$misao-blue;
+    }
+  }
+  &__rainyPercent {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    font-size: 32px;
+    &--value {
+      span {
+        margin-left: 16px;
+        display: inline-block;
+        font-size: 24px;
+      }
+    }
+  }
+  &__wbgt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    &--icon {
+      width: 103px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &--value {
+      width: 200px;
+      height: 64px;
+      border-radius: 12px;
+      margin: 0 auto;
+      line-height: 64px;
+      background-color: orange;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+      @at-root {
+        .safety#{&} {
+          background-color: c.$safety;
+        }
+        .attention#{&} {
+          background-color: c.$attention;
+        }
+        .vigilance#{&} {
+          background-color: c.$vigilance;
+        }
+        .s-vigilance#{&} {
+          background-color: c.$s-vigilance;
+        }
+        .danger#{&} {
+          background-color: c.$danger;
+        }
+      }
+    }
+  }
+  @at-root {
+    &--eva#{&} {
+      .weatherList__item {
+        gap: 32px;
+      }
+      .weatherList__day {
+        font-family: "Noto Sans JP", sans-serif;
+        font-family: "Roboto", sans-serif;
+        &--sat {
+          color: c.$eva-blue;
+        }
+        &--sun {
+          color: c.$eva-red;
+        }
+        &--holiday {
+          color: c.$eva-red;
+        }
+      }
+      .weatherList__dayOfWeek {
+        font-family: "Noto Sans JP", sans-serif;
+        font-family: "Roboto", sans-serif;
+        &--sat {
+          color: c.$eva-blue;
+        }
+        &--sun {
+          color: c.$eva-red;
+        }
+        &--holiday {
+          color: c.$eva-red;
+        }
+      }
+      .weatherList__dayOfWeather {
+        height: 132px;
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+      .weatherList__temperature {
+        font-family: "dseg";
+        &--max {
+          color: c.$eva-red;
+        }
+        &--min {
+          color: c.$eva-blue;
+        }
+      }
+      .weatherList__rainyPercent {
+        gap: 24px;
+        &--title {
+          line-height: 1.3;
+        }
+        &--value {
+          font-size: 48px;
+        }
+      }
+      .weatherList__wbgt {
+        &--icon {
+          width: 177px;
+        }
+      }
+    }
+  }
+}

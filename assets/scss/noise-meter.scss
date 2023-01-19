@@ -1,0 +1,287 @@
+@use "reset" as r;
+@use "mixin" as m;
+@use "common" as c;
+@use "font" as f;
+
+.noiseMeter {
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &__illust {
+    &--top {
+      width: 20%;
+      min-width: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &--couple {
+      width: 10%;
+      min-width: 200px;
+      position: absolute;
+      top: 10%;
+      right: 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &--family {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      @include m.mq(vertical) {
+        width: 40%;
+        top: 40%;
+        left: 60%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &--town {
+      position: absolute;
+      bottom: 5%;
+    }
+    &--bottom {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .header {
+    width: 100%;
+    padding: 12px 32px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 26, 0, 0.5);
+    color: #fff;
+    &__title {
+      font-weight: bold;
+      font-size: 56px;
+      @include m.mq(sp) {
+        font-size: 40px;
+      }
+    }
+    &__date {
+      font-weight: bold;
+      font-size: 56px;
+      @include m.mq(sp) {
+        font-size: 40px;
+      }
+      span {
+        font-size: 24px;
+        @include m.mq(sp) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .dataWrapper {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include m.mq(vertical) {
+      height: 80%;
+      flex-direction: column;
+    }
+  }
+
+  .noiseWrapper {
+    @include m.mq(vertical) {
+      width: 100%;
+    }
+    &__title {
+      width: 50%;
+      min-width: 150px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .vibrationWrapper {
+    @include m.mq(vertical) {
+      width: 100%;
+    }
+    &__title {
+      width: 50%;
+      min-width: 150px;
+    }
+  }
+
+  .valueWrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 32px;
+    &__strings {
+      font-size: 298px;
+      font-weight: bold;
+      color: #f4c403;
+      @include m.mq(sp) {
+        font-size: 198px;
+      }
+    }
+    &__db {
+      min-width: 80px;
+      @include m.mq(sp) {
+        width: 20%;
+      }
+    }
+  }
+  @at-root {
+    &--default {
+      background-image: url(../images/noise-meter/blackBoard/base_blackBoard.jpg);
+    }
+    &--flatPanel {
+      background-image: url(../images/noise-meter/flatPanel/base.jpg);
+
+      .header {
+        background: rgba(8, 45, 133, 0.8);
+      }
+
+      .valueWrapper {
+        &__strings {
+          width: 100%;
+          padding-left: 56px;
+          margin-top: 32px;
+          background-image: url(../images/noise-meter/flatPanel/display.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include m.mq(vertical) {
+            width: 50%;
+          }
+        }
+        &__db {
+          width: 25%;
+          @include m.mq(vertical) {
+            width: 18%;
+          }
+        }
+      }
+    }
+    &--paper {
+      background-image: url(../images/noise-meter/paper/base_paper.jpg);
+
+      .header {
+        background: rgba(8, 45, 133, 0.8);
+      }
+
+      .valueWrapper {
+        &__strings {
+          width: 100%;
+          padding-left: 56px;
+          margin-top: 32px;
+          background-image: url(../images/noise-meter/paper/blackBoard_small.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include m.mq(vertical) {
+            width: 50%;
+          }
+        }
+        &__db {
+          width: 25%;
+          @include m.mq(vertical) {
+            width: 18%;
+          }
+        }
+      }
+    }
+    &--eva {
+      background-image: url(../images/noise-meter/eva/bg_noise-meter.png);
+      @include m.mq(vertical) {
+        background-position: left;
+      }
+
+      .header {
+        width: 75%;
+        font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+          "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN",
+          "Hiragino Mincho ProN", sans-serif;
+        @include m.mq(vertical) {
+          width: 100%;
+        }
+      }
+
+      .dataWrapper {
+        width: 75%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include m.mq(vertical) {
+          width: 100%;
+          padding: 0 32px;
+          justify-content: center;
+          gap: 80px;
+        }
+        .noiseWrapper {
+          @include m.mq(vertical) {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+          }
+          &__title {
+            width: 30%;
+          }
+        }
+        .vibrationWrapper {
+          @include m.mq(vertical) {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+          }
+          &__title {
+            width: 30%;
+          }
+        }
+      }
+
+      .valueWrapper {
+        display: flex;
+        justify-content: flex-start;
+        gap: 32px;
+        &__strings {
+          font-family: "dseg";
+          font-size: 180px;
+          font-weight: bold;
+          color: #ffab00;
+          text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
+          @include m.mq(sp) {
+            font-size: 98px;
+          }
+        }
+        &__db {
+          font-size: 124px;
+          font-weight: bold;
+          color: #ffab00;
+          text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
+          @include m.mq(sp) {
+            font-size: 70px;
+          }
+        }
+      }
+      &--bottom {
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        @include m.mq(vertical) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
