@@ -31,14 +31,6 @@
     max-height: 90px;
     padding: 24px;
     margin-bottom: 80px;
-    @include m.mq(tab) {
-      max-height: 104px;
-    }
-    &--eva {
-      @include m.mq(tab) {
-        margin-bottom: 164px;
-      }
-    }
     &__title {
       width: fit-content;
       margin: 0 auto;
@@ -59,9 +51,6 @@
     &--town {
       left: 0;
       bottom: 7%;
-      @include m.mq(vertical) {
-        bottom: 3%;
-      }
     }
     &--bottom {
       left: 0;
@@ -73,9 +62,6 @@
     padding: 32px 24px;
     margin: 0 auto;
     font-weight: bold;
-    @include m.mq(tab) {
-      padding: 56px 24px;
-    }
     &--default {
       background-color: #fefefe;
     }
@@ -86,21 +72,12 @@
   list-style-type: none;
   display: flex;
   flex-wrap: nowrap;
-  @include m.mq(vertical) {
-    flex-direction: column;
-    gap: 32px;
-  }
   &__item {
     width: calc(100% / 7);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    @include m.mq(vertical) {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-    }
   }
   &__day {
     font-size: 40px;

@@ -8,9 +8,6 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  @include m.mq(vertical) {
-    padding-top: 80px;
-  }
   @at-root {
     .default#{&} {
       background-image: url(../images/schedule/blackBoard_bg_base.jpg);
@@ -38,10 +35,6 @@
     padding: 32px;
     margin-bottom: 64px;
     color: c.$misao-blue;
-    @include m.mq(vertical) {
-      max-height: 147px;
-    }
-
     @at-root {
       &--eva#{&} {
         color: #fff;
@@ -129,10 +122,6 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  @include m.mq(vertical) {
-    height: 100%;
-  }
-
   &__item {
     height: calc(100% / 7);
     padding: 8px;
@@ -212,9 +201,6 @@
 .footer {
   height: 15%;
   margin: 32px 0;
-  @include m.mq(vertical) {
-    margin: 48px 0;
-  }
   &__content {
     width: calc(100% - 64px);
     height: 100%;
@@ -256,15 +242,9 @@
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
-    @include m.mq(vertical) {
-      flex-direction: column;
-    }
   }
   &__logo {
     width: 15%;
-    @include m.mq(vertical) {
-      width: 28%;
-    }
     img {
       width: 100%;
     }
@@ -274,10 +254,6 @@
     flex-basis: 85%;
     background-color: #fff;
     overflow: hidden;
-    @include m.mq(vertical) {
-      width: 100%;
-    }
-
     @at-root {
       &--eva#{&} {
         background-color: transparent;
@@ -343,57 +319,5 @@
   }
   100% {
     transform: translateX(-100%);
-  }
-}
-
-.toastWrapper {
-  width: 100%;
-  max-width: 959px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 999;
-  visibility: hidden;
-
-  &__content {
-    padding: 56px 80px;
-    margin-bottom: 32px;
-    border-radius: 20px;
-    border: 8px solid #444;
-    background-color: #DDD;
-    box-shadow: 10px 10px 10px rgba(68,68,68,0.25);
-    display: flex;
-    align-items: center;
-    gap: 48px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
-    img {
-      width: 120px;
-      height: 120px;
-    }
-
-    p {
-      font-weight: bold;
-      font-size: 36px;
-    }
-
-    &--alert {
-      border: 8px solid #FFC700;
-      background-color: rgba(255,246,212,0.8);
-    }
-
-    &--delivery {
-      border: 8px solid #057BAE;
-      background-color: rgba(210,242,255,0.8);
-    }
-
-    &--time {
-      border: 8px solid #05AE34;
-      background-color: rgba(208,255,221,0.8);
-    }
   }
 }

@@ -111,9 +111,6 @@
         border: 5px solid #ffd900;
       }
     }
-    @include m.mq(vertical) {
-      width: 80%;
-    }
   }
   @keyframes blinking {
     0% {
@@ -122,8 +119,5 @@
     100% {
       opacity: 1;
     }
-  }
-  @include m.mq(vertical) {
-    background-position: left;
   }
 }

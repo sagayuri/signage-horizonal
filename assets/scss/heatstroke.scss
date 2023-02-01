@@ -14,9 +14,6 @@
       "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN",
       "Hiragino Mincho ProN", sans-serif;
     font-weight: bold;
-    @include m.mq(vertical) {
-      background-position: left;
-    }
     &.safety {
       background-image: url(../images/heatstroke/eva/bg_safety.png);
     }
@@ -54,20 +51,20 @@
       align-items: center;
       .content_title {
         font-size: 48px;
-        @include m.mq(pc) {
-          font-size: 32px;
-        }
       }
       .update_time {
         font-size: 48px;
+        @include m.mq(sp) {
+          font-size: 32px;
+        }
         span {
           margin-left: 4px;
           margin-right: 8px;
           display: inline-block;
           font-size: 24px;
-        }
-        @include m.mq(pc) {
-          font-size: 32px;
+          @include m.mq(sp) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -78,9 +75,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      @include m.mq(vertical) {
-        width: 90%;
-      }
       .numerical_value {
         text-align: center;
         font-size: 68px;
@@ -89,9 +83,6 @@
           display: inline-block;
           font-size: 70px;
         }
-        @include m.mq(pc) {
-          font-size: 56px;
-        }
       }
       .content_body {
         margin-top: 24px;
@@ -99,12 +90,6 @@
           text-align: center;
           font-size: 233px;
           white-space: nowrap;
-          @include m.mq(pc) {
-            font-size: 189px;
-          }
-          @include m.mq(sp) {
-            font-size: 98px;
-          }
         }
         .vigilance_level {
           width: fit-content;
@@ -114,9 +99,6 @@
           font-size: 68px;
           background-color: rgba(255, 255, 255, 0.6);
           color: c.$eva-black;
-          @include m.mq(sp) {
-            font-size: 42px;
-          }
           span {
             margin-left: 16px;
             display: inline-block;
@@ -150,9 +132,6 @@
         margin-top: 48px;
         .content_text {
           font-size: 32px;
-          @include m.mq(pc) {
-            font-size: 24px;
-          }
         }
       }
     }
@@ -181,14 +160,14 @@
       .content_title {
         font-size: 48px;
         letter-spacing: 2px;
-        @include m.mq(pc) {
-          font-size: 32px;
+        @include m.mq(sp) {
+          font-size: 24px;
         }
       }
       .update_time {
         font-size: 48px;
         font-weight: bold;
-        @include m.mq(pc) {
+        @include m.mq(sp) {
           font-size: 32px;
         }
         span {
@@ -196,7 +175,7 @@
           margin-left: 4px;
           margin-right: 8px;
           font-size: 24px;
-          @include m.mq(pc) {
+          @include m.mq(sp) {
             font-size: 16px;
           }
         }
@@ -206,14 +185,20 @@
       height: 90%;
       padding: 24px 32px;
       flex-basis: 90%;
+      @include m.mq(pc) {
+        height: 87%;
+      }
       .content_wrapper {
         height: 100%;
         min-height: 768px;
         padding: 36px;
         border-radius: 52px;
         box-shadow: 0 15px #6a7478;
-        @include m.mq(vertical) {
-          min-height: 1300px;
+        @include m.mq(pc) {
+          min-height: auto;
+        }
+        @include m.mq(sp) {
+          box-shadow: 0 8px #6a7478;
         }
         &.safety {
           background-color: c.$safety; /*ほぼ安全*/
@@ -243,19 +228,14 @@
           flex-wrap: nowrap;
           justify-content: space-around;
           align-items: center;
-          @include m.mq(vertical) {
-            flex-direction: column;
-          }
           .value_icon {
             width: 30%;
             min-width: 200px;
             height: 100%;
             position: relative;
             @include m.mq(sp) {
-              width: 50%;
-            }
-            @include m.mq(vertical) {
-              width: 65%;
+              width: 20%;
+              min-width: 163px;
             }
             img {
               width: auto;
@@ -272,8 +252,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            @include m.mq(vertical) {
-              width: 100%;
+            @include m.mq(sp) {
+              width: 80%;
             }
             .value_header {
               display: flex;
@@ -283,7 +263,10 @@
               font-size: 48px;
               font-weight: bold;
               @include m.mq(pc) {
-                font-size: 32px;
+                font-size: 40px;
+              }
+              @include m.mq(sp) {
+                font-size: 24px;
               }
               span {
                 display: inline-block;
@@ -322,16 +305,28 @@
                 height: auto;
                 margin: 0 auto;
                 display: block;
+                @include m.mq(pc) {
+                  width: 90%;
+                }
+                @include m.mq(sp) {
+                  width: 85%;
+                }
               }
             }
             .value_text {
               padding: 24px 0;
+              @include m.mq(pc) {
+                padding: 16px 0 0;
+              }
               p {
                 line-height: 1.6;
                 font-size: 32px;
                 font-weight: 700;
                 @include m.mq(pc) {
-                  font-size: 24px;
+                  font-size: 28px;
+                }
+                @include m.mq(sp) {
+                  font-size: 16px;
                 }
               }
             }

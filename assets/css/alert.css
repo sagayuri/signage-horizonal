@@ -206,11 +206,6 @@ body {
   border: 5px solid #ffd900;
 }
 
-@media screen and (max-width: 1200px) {
-  .alertContent__blink {
-    width: 80%;
-  }
-}
 @-webkit-keyframes blinking {
   0% {
     opacity: 0;
@@ -219,16 +214,12 @@ body {
     opacity: 1;
   }
 }
+
 @keyframes blinking {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .alertContent {
-    background-position: left;
   }
 }

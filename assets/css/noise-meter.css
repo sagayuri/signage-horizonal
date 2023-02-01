@@ -90,6 +90,11 @@ body {
   top: 10%;
   right: 0;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter__illust--couple {
+    min-width: auto;
+  }
+}
 .noiseMeter__illust--couple img {
   width: 100%;
   height: auto;
@@ -99,23 +104,56 @@ body {
   top: 50%;
   left: 40%;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1240px) {
   .noiseMeter__illust--family {
-    width: 40%;
-    top: 40%;
-    left: 60%;
+    max-width: 180px;
+    top: 65%;
   }
-  .noiseMeter__illust--family img {
-    width: 100%;
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter__illust--family {
+    max-width: 151px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter__illust--family {
+    max-width: 114px;
+    left: 37%;
+    top: 55%;
   }
 }
 .noiseMeter__illust--town {
+  width: 100%;
   position: absolute;
   bottom: 5%;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter__illust--town {
+    width: 100%;
+    height: 80px;
+    bottom: 4%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter__illust--town {
+    height: 48px;
+  }
+}
+.noiseMeter__illust--town img {
+  width: 100%;
+}
+@media screen and (max-width: 1240px) {
+  .noiseMeter__illust--town img {
+    height: 100%;
+  }
+}
 .noiseMeter__illust--bottom {
+  width: 100%;
   position: absolute;
   bottom: 0;
+}
+.noiseMeter__illust--bottom img {
+  width: 100%;
 }
 .noiseMeter .header {
   width: 100%;
@@ -127,29 +165,41 @@ body {
   color: #fff;
 }
 .noiseMeter .header__title {
+  line-height: 1;
   font-weight: bold;
   font-size: 56px;
+}
+@media screen and (max-width: 1240px) {
+  .noiseMeter .header__title {
+    font-size: 48px;
+  }
 }
 @media screen and (max-width: 767px) {
   .noiseMeter .header__title {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 .noiseMeter .header__date {
+  line-height: 1;
   font-weight: bold;
   font-size: 56px;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter .header__date {
+    font-size: 48px;
+  }
+}
 @media screen and (max-width: 767px) {
   .noiseMeter .header__date {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 .noiseMeter .header__date span {
   font-size: 24px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1240px) {
   .noiseMeter .header__date span {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .noiseMeter .dataWrapper {
@@ -162,30 +212,38 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 1200px) {
-  .noiseMeter .dataWrapper {
-    height: 80%;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .noiseMeter .noiseWrapper {
-    width: 100%;
-  }
-}
 .noiseMeter .noiseWrapper__title {
   width: 50%;
   min-width: 150px;
   margin-bottom: 24px;
 }
-@media screen and (max-width: 1200px) {
-  .noiseMeter .vibrationWrapper {
-    width: 100%;
+@media screen and (max-width: 1240px) {
+  .noiseMeter .noiseWrapper__title {
+    width: 40%;
+    margin-left: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .noiseWrapper__title {
+    min-width: 114px;
+    margin-bottom: 0;
   }
 }
 .noiseMeter .vibrationWrapper__title {
   width: 50%;
   min-width: 150px;
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 1240px) {
+  .noiseMeter .vibrationWrapper__title {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .vibrationWrapper__title {
+    min-width: 114px;
+    margin-bottom: 0;
+  }
 }
 .noiseMeter .valueWrapper {
   display: flex;
@@ -193,22 +251,59 @@ body {
   justify-content: center;
   gap: 32px;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter .valueWrapper {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter .valueWrapper {
+    gap: 8px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .valueWrapper {
+    gap: 4px;
+  }
+}
 .noiseMeter .valueWrapper__strings {
   font-size: 298px;
   font-weight: bold;
   color: #f4c403;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter .valueWrapper__strings {
+    line-height: 1;
+    font-size: 250px;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter .valueWrapper__strings {
+    font-size: 220px;
+  }
+}
 @media screen and (max-width: 767px) {
   .noiseMeter .valueWrapper__strings {
-    font-size: 198px;
+    font-size: 120px;
   }
 }
 .noiseMeter .valueWrapper__db {
   min-width: 80px;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter .valueWrapper__db {
+    max-width: 120px;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter .valueWrapper__db {
+    max-width: 87px;
+  }
+}
 @media screen and (max-width: 767px) {
   .noiseMeter .valueWrapper__db {
-    width: 20%;
+    min-width: auto;
+    max-width: 60px;
   }
 }
 .noiseMeter--default {
@@ -221,25 +316,50 @@ body {
 .noiseMeter--flatPanel .header {
   background: rgba(8, 45, 133, 0.8);
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter--flatPanel .noiseWrapper__title {
+    max-width: 220px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .noiseMeter--flatPanel .vibrationWrapper__title {
+    max-width: 220px;
+  }
+}
 .noiseMeter--flatPanel .valueWrapper__strings {
   width: 100%;
-  padding-left: 56px;
+  padding-left: 80px;
   margin-top: 32px;
   background-image: url(../images/noise-meter/flatPanel/display.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1240px) {
   .noiseMeter--flatPanel .valueWrapper__strings {
-    width: 50%;
+    padding: 20px;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter--flatPanel .valueWrapper__strings {
+    padding: 20px;
+    font-size: 180px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--flatPanel .valueWrapper__strings {
+    width: auto;
+    padding: 20px;
+    margin-top: 16px;
+    font-size: 100px;
   }
 }
 .noiseMeter--flatPanel .valueWrapper__db {
   width: 25%;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 767px) {
   .noiseMeter--flatPanel .valueWrapper__db {
-    width: 18%;
+    max-width: 41px;
   }
 }
 
@@ -249,43 +369,56 @@ body {
 .noiseMeter--paper .header {
   background: rgba(8, 45, 133, 0.8);
 }
+.noiseMeter--paper .noiseWrapper__title {
+  margin-bottom: 0;
+}
+.noiseMeter--paper .vibrationWrapper__title {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--paper .valueWrapper {
+    gap: 16px;
+  }
+}
 .noiseMeter--paper .valueWrapper__strings {
   width: 100%;
-  padding-left: 56px;
+  padding-left: 80px;
   margin-top: 32px;
   background-image: url(../images/noise-meter/paper/blackBoard_small.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
   .noiseMeter--paper .valueWrapper__strings {
-    width: 50%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--paper .valueWrapper__strings {
+    width: auto;
+    padding: 20px;
+    margin-top: 16px;
   }
 }
 .noiseMeter--paper .valueWrapper__db {
   width: 25%;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 767px) {
   .noiseMeter--paper .valueWrapper__db {
-    width: 18%;
+    max-width: 41px;
   }
 }
 
 .noiseMeter--eva {
   background-image: url(../images/noise-meter/eva/bg_noise-meter.png);
 }
-@media screen and (max-width: 1200px) {
-  .noiseMeter--eva {
-    background-position: left;
-  }
-}
 .noiseMeter--eva .header {
-  width: 75%;
+  width: 100%;
   font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", sans-serif;
 }
-@media screen and (max-width: 1200px) {
-  .noiseMeter--eva .header {
-    width: 100%;
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter--eva .header__title {
+    font-size: 40px;
   }
 }
 .noiseMeter--eva .dataWrapper {
@@ -298,33 +431,28 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1240px) {
   .noiseMeter--eva .dataWrapper {
-    width: 100%;
-    padding: 0 32px;
-    justify-content: center;
-    gap: 80px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .noiseMeter--eva .dataWrapper .noiseWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
+    width: 90%;
   }
 }
 .noiseMeter--eva .dataWrapper .noiseWrapper__title {
   width: 30%;
+  margin-left: 16px;
 }
-@media screen and (max-width: 1200px) {
-  .noiseMeter--eva .dataWrapper .vibrationWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .dataWrapper .noiseWrapper__title {
+    margin-bottom: 24px;
   }
 }
 .noiseMeter--eva .dataWrapper .vibrationWrapper__title {
   width: 30%;
+  margin-left: 16px;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .dataWrapper .vibrationWrapper__title {
+    margin-bottom: 24px;
+  }
 }
 .noiseMeter--eva .valueWrapper {
   display: flex;
@@ -333,14 +461,24 @@ body {
 }
 .noiseMeter--eva .valueWrapper__strings {
   font-family: "dseg";
-  font-size: 180px;
+  font-size: 240px;
   font-weight: bold;
   color: #ffab00;
   text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
 }
+@media screen and (max-width: 1240px) {
+  .noiseMeter--eva .valueWrapper__strings {
+    font-size: 180px;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter--eva .valueWrapper__strings {
+    font-size: 150px;
+  }
+}
 @media screen and (max-width: 767px) {
   .noiseMeter--eva .valueWrapper__strings {
-    font-size: 98px;
+    font-size: 120px;
   }
 }
 .noiseMeter--eva .valueWrapper__db {
@@ -349,9 +487,15 @@ body {
   color: #ffab00;
   text-shadow: 0 0 10px #b90008, 0 0 30px #b90008;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1240px) {
   .noiseMeter--eva .valueWrapper__db {
     font-size: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .valueWrapper__db {
+    white-space: nowrap;
+    font-size: 50px;
   }
 }
 .noiseMeter--eva--bottom {
@@ -360,9 +504,4 @@ body {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-}
-@media screen and (max-width: 1200px) {
-  .noiseMeter--eva--bottom {
-    width: 100%;
-  }
 }
