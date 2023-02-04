@@ -24,7 +24,13 @@
       top: 10%;
       right: 0;
       @include m.mq(pc) {
-        min-width: auto;
+        min-width: 136px;
+      }
+      @include m.mq(tab) {
+        min-width: 136px;
+      }
+      @include m.mq(sp) {
+        min-width: 87px;
       }
       img {
         width: 100%;
@@ -278,6 +284,7 @@
 
           @include m.mq(tab) {
             padding: 20px;
+            line-height: 1.0;
             font-size: 180px;
           }
 
@@ -285,6 +292,7 @@
             width: auto;
             padding: 20px;
             margin-top: 16px;
+            line-height: 1.0;
             font-size: 100px;
           }
 
@@ -333,14 +341,20 @@
           background-repeat: no-repeat;
           background-size: contain;
 
+          @include m.mq(pc) {
+            padding: 32px;
+          }
+
           @include m.mq(tab) {
             padding: 20px;
+            line-height: 1.0;
           }
 
           @include m.mq(sp) {
             width: auto;
             padding: 20px;
             margin-top: 16px;
+            line-height: 1.0;
           }
         }
         &__db {
@@ -381,6 +395,14 @@
         align-items: center;
 
         @include m.mq(pc) {
+          width: 90%;
+        }
+
+        @include m.mq(tab) {
+          width: 90%;
+        }
+
+        @include m.mq(sp) {
           width: 90%;
         }
 
@@ -426,7 +448,7 @@
           }
 
           @include m.mq(sp) {
-            font-size: 120px;
+            font-size: 90px;
           }
         }
         &__db {
@@ -437,6 +459,11 @@
 
           @include m.mq(pc) {
             font-size: 70px;
+          }
+
+          @include m.mq(tab) {
+            max-width: none;
+            font-size: 67px;
           }
 
           @include m.mq(sp) {

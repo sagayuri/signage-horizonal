@@ -31,12 +31,14 @@
     }
     .bar_top {
       width: 100%;
+      height: auto;
       position: absolute;
       top: 0;
       left: 0;
     }
     .bar_bottom {
       width: 100%;
+      height: auto;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -49,19 +51,37 @@
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
+      @include m.mq(tab) {
+        padding: 53px 32px 24px 32px;
+      }
+      @include m.mq(sp) {
+        padding: 26px 32px 24px 32px;
+      }
       .content_title {
         font-size: 48px;
+        @include m.mq(tab) {
+          font-size: 32px;
+        }
+        @include m.mq(sp) {
+          font-size: 24px;
+        }
       }
       .update_time {
         font-size: 48px;
-        @include m.mq(sp) {
+        @include m.mq(tab) {
           font-size: 32px;
+        }
+        @include m.mq(sp) {
+          font-size: 24px;
         }
         span {
           margin-left: 4px;
           margin-right: 8px;
           display: inline-block;
           font-size: 24px;
+          @include m.mq(tab) {
+            font-size: 18px;
+          }
           @include m.mq(sp) {
             font-size: 16px;
           }
@@ -75,21 +95,67 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      @include m.mq(tab) {
+        width: 82%;
+      }
+      @include m.mq(tab) {
+        width: 87%;
+      }
       .numerical_value {
         text-align: center;
         font-size: 68px;
+        @include m.mq(pc) {
+          font-size: 40px;
+        }
+        @include m.mq(tab) {
+          font-size: 40px;
+        }
+        @include m.mq(sp) {
+          font-size: 24px;
+        }
         span {
           margin-left: 16px;
           display: inline-block;
           font-size: 70px;
+          @include m.mq(pc) {
+            font-size: 42px;
+          }
+          @include m.mq(tab) {
+            font-size: 40px;
+          }
+          @include m.mq(sp) {
+            font-size: 26px;
+          }
         }
       }
       .content_body {
         margin-top: 24px;
+        @include m.mq(pc) {
+          margin-top: 0;
+        }
+        @include m.mq(tab) {
+          margin-top: 0;
+        }
+        @include m.mq(sp) {
+          margin-top: 0;
+        }
         .value_content {
           text-align: center;
           font-size: 233px;
           white-space: nowrap;
+          @include m.mq(pc) {
+            font-size: 190px;
+          }
+          @include m.mq(tab) {
+            margin: 24px 0;
+            line-height: 1.0;
+            font-size: 170px;
+          }
+          @include m.mq(sp) {
+            margin: 8px 0;
+            line-height: 1.0;
+            font-size: 64px;
+          }
         }
         .vigilance_level {
           width: fit-content;
@@ -99,10 +165,30 @@
           font-size: 68px;
           background-color: rgba(255, 255, 255, 0.6);
           color: c.$eva-black;
+          @include m.mq(pc) {
+            font-size: 40px;
+          }
+          @include m.mq(tab) {
+            font-size: 40px;
+          }
+          @include m.mq(sp) {
+            padding: 0 24px;
+            margin: 0 auto;
+            font-size: 24px;
+          }
           span {
             margin-left: 16px;
             display: inline-block;
             font-size: 70px;
+            @include m.mq(pc) {
+              font-size: 42px;
+            }
+            @include m.mq(tab) {
+              font-size: 42px;
+            }
+            @include m.mq(sp) {
+              font-size: 24px;
+            }
           }
           /*値によって色が変わる*/
           &.safety {
@@ -130,8 +216,20 @@
       }
       .content_footer {
         margin-top: 48px;
+        @include m.mq(sp) {
+          margin-top: 16px;
+        }
         .content_text {
           font-size: 32px;
+          @include m.mq(pc) {
+            font-size: 24px;
+          }
+          @include m.mq(tab) {
+            font-size: 24px;
+          }
+          @include m.mq(sp) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -184,21 +282,19 @@
     .content_body {
       height: 90%;
       padding: 24px 32px;
-      flex-basis: 90%;
-      @include m.mq(pc) {
-        height: 87%;
-      }
+      flex-basis: 87%;
       .content_wrapper {
         height: 100%;
-        min-height: 768px;
         padding: 36px;
         border-radius: 52px;
         box-shadow: 0 15px #6a7478;
-        @include m.mq(pc) {
-          min-height: auto;
+        @include m.mq(tab) {
+          padding: 16px;
         }
         @include m.mq(sp) {
-          box-shadow: 0 8px #6a7478;
+          padding: 12px;
+          border-radius: 38px;
+          box-shadow: 0 4px #6a7478;
         }
         &.safety {
           background-color: c.$safety; /*ほぼ安全*/
@@ -226,8 +322,13 @@
           padding: 32px;
           display: flex;
           flex-wrap: nowrap;
-          justify-content: space-around;
+          justify-content: center;
+          gap: 32px;
           align-items: center;
+          @include m.mq(sp) {
+            border: dotted 5px #fff;
+            border-radius: 33px;
+          }
           .value_icon {
             width: 30%;
             min-width: 200px;
@@ -235,7 +336,7 @@
             position: relative;
             @include m.mq(sp) {
               width: 20%;
-              min-width: 163px;
+              min-width: 124px;
             }
             img {
               width: auto;
@@ -252,6 +353,9 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+            @include m.mq(tab) {
+              width: 77%;
+            }
             @include m.mq(sp) {
               width: 80%;
             }
@@ -265,8 +369,11 @@
               @include m.mq(pc) {
                 font-size: 40px;
               }
+              @include m.mq(tab) {
+                font-size: 32px;
+              }
               @include m.mq(sp) {
-                font-size: 24px;
+                font-size: 18px;
               }
               span {
                 display: inline-block;
@@ -300,6 +407,9 @@
             }
             .value_content {
               padding: 16px 0;
+              @include m.mq(sp) {
+                padding: 8px 0;
+              }
               img {
                 width: 100%;
                 height: auto;
@@ -308,25 +418,34 @@
                 @include m.mq(pc) {
                   width: 90%;
                 }
+                @include m.mq(tab) {
+                  width: 80%;
+                }
                 @include m.mq(sp) {
-                  width: 85%;
+                  width: 55%;
                 }
               }
             }
             .value_text {
               padding: 24px 0;
-              @include m.mq(pc) {
+              @include m.mq(tab) {
                 padding: 16px 0 0;
+              }
+              @include m.mq(sp) {
+                padding: 8px 0 0;
               }
               p {
                 line-height: 1.6;
                 font-size: 32px;
                 font-weight: 700;
                 @include m.mq(pc) {
-                  font-size: 28px;
+                  font-size: 24px;
+                }
+                @include m.mq(tab) {
+                  font-size: 20px;
                 }
                 @include m.mq(sp) {
-                  font-size: 16px;
+                  font-size: 14px;
                 }
               }
             }
