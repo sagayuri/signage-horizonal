@@ -35,6 +35,21 @@
     padding: 32px;
     margin-bottom: 64px;
     color: c.$misao-blue;
+
+    @include m.mq(pc) {
+      padding: 16px;
+    }
+
+    @include m.mq(tab) {
+      padding: 16px;
+    }
+
+    @include m.mq(sp) {
+      max-height: fit-content;
+      padding: 16px;
+      margin-bottom: 28px;
+    }
+
     @at-root {
       &--eva#{&} {
         color: #fff;
@@ -43,18 +58,76 @@
 
     h1 {
       font-size: 64px;
+
+      @include m.mq(pc) {
+        font-size: 48px;
+      }
+
+      @include m.mq(tab) {
+        font-size: 48px;
+      }
+
+      @include m.mq(sp) {
+        font-size: 24px;
+      }
     }
 
     p {
       text-align: center;
       font-weight: bold;
       font-size: 48px;
+
+      @include m.mq(pc) {
+        font-size: 32px;
+      }
+
+      @include m.mq(tab) {
+        font-size: 32px;
+      }
+
+      @include m.mq(sp) {
+        font-size: 16px;
+      }
     }
   }
 
   &__title {
     width: fit-content;
     margin: 0 auto;
+
+    &--main {
+      @include m.mq(pc) {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @include m.mq(tab) {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @include m.mq(sp) {
+        width: 35%;
+        margin: 0 auto;
+      }
+    }
+
+    &--sub {
+      @include m.mq(pc) {
+        width: 60%;
+        margin: 16px auto 0;
+      }
+
+      @include m.mq(tab) {
+        width: 60%;
+        margin: 16px auto 0;
+      }
+
+      @include m.mq(sp) {
+        width: 30%;
+        margin: 8px auto 0;
+      }
+    }
   }
 
   &__illust {
@@ -62,6 +135,18 @@
     &--top {
       top: 0;
       left: 0;
+
+      @include m.mq(pc) {
+        width: 22%;
+      }
+
+      @include m.mq(tab) {
+        width: 22%;
+      }
+
+      @include m.mq(sp) {
+        width: 22%;
+      }
     }
   }
 
@@ -87,6 +172,19 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+
+    @include m.mq(pc) {
+      padding: 12px 56px;
+    }
+
+    @include m.mq(tab) {
+      padding: 12px 56px;
+    }
+
+    @include m.mq(sp) {
+      padding: 12px 24px;
+    }
+
     @at-root {
       &--paper#{&} {
         box-shadow: 0 0 10px rgba(139, 69, 19, 0.25);
@@ -98,21 +196,57 @@
   }
   &__contentMag {
     position: absolute;
+
+    @include m.mq(pc) {
+      width: 16px;
+      height: auto;
+    }
+
+    @include m.mq(tab) {
+      width: 16px;
+      height: auto;
+    }
+
+    @include m.mq(sp) {
+      width: 12px;
+      height: auto;
+    }
+
     &--red {
       top: 20px;
       left: 20px;
+
+      @include m.mq(sp) {
+        top: 12px;
+        left: 12px;
+      }
     }
     &--blue {
       top: 20px;
       right: 20px;
+
+      @include m.mq(sp) {
+        top: 12px;
+        right: 12px;
+      }
     }
     &--yellow {
       bottom: 20px;
       left: 20px;
+
+      @include m.mq(sp) {
+        bottom: 12px;
+        left: 12px;
+      }
     }
     &--green {
       bottom: 20px;
       right: 20px;
+
+      @include m.mq(sp) {
+        bottom: 12px;
+        right: 12px;
+      }
     }
   }
 }
@@ -130,6 +264,21 @@
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+
+    @include m.mq(pc) {
+      gap: 24px;
+    }
+
+    @include m.mq(tab) {
+      gap: 24px;
+    }
+
+    @include m.mq(sp) {
+      padding: 0;
+      border-bottom: dotted 2px #ddd;
+      gap: 12px;
+    }
+
     &:last-of-type {
       border: none;
     }
@@ -181,14 +330,50 @@
   &__date {
     font-weight: bold;
     font-size: 40px;
+
+    @include m.mq(pc) {
+      font-size: 24px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 24px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 13px;
+    }
   }
   &__dayOfWeek {
     font-weight: bold;
     font-size: 40px;
+
+    @include m.mq(pc) {
+      font-size: 24px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 24px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 13px;
+    }
   }
   &__plan {
     font-weight: bold;
     font-size: 48px;
+
+    @include m.mq(pc) {
+      font-size: 32px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 32px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -196,11 +381,39 @@
   position: absolute;
   bottom: 20px;
   right: 70px;
+
+  @include m.mq(pc) {
+    width: 21%;
+  }
+
+  @include m.mq(tab) {
+    width: 21%;
+  }
+
+  @include m.mq(sp) {
+    width: 21%;
+  }
 }
 
 .footer {
   height: 15%;
   margin: 32px 0;
+
+  @include m.mq(pc) {
+    height: 12%;
+    margin: 16px 0;
+  }
+
+  @include m.mq(tab) {
+    height: 12%;
+    margin: 16px 0;
+  }
+
+  @include m.mq(sp) {
+    height: 12%;
+    margin: 8px 0;
+  }
+
   &__content {
     width: calc(100% - 64px);
     height: 100%;
@@ -208,6 +421,19 @@
     margin: 0 auto;
     background-image: url(../images/schedule/paper_bg_content.jpg);
     position: relative;
+
+    @include m.mq(pc) {
+      padding: 8px 64px;
+    }
+
+    @include m.mq(tab) {
+      padding: 16px 64px;
+    }
+
+    @include m.mq(sp) {
+      padding: 8px 64px;
+    }
+
     @at-root {
       &--paper#{&} {
         box-shadow: 0 0 10px rgba(139, 69, 19, 0.25);
@@ -220,21 +446,57 @@
   }
   &__contentMag {
     position: absolute;
+
+    @include m.mq(pc) {
+      width: 16px;
+      height: auto;
+    }
+
+    @include m.mq(tab) {
+      width: 16px;
+      height: auto;
+    }
+
+    @include m.mq(sp) {
+      width: 12px;
+      height: auto;
+    }
+
     &--red {
       top: 16px;
       left: 16px;
+
+      @include m.mq(sp) {
+        top: 4px;
+        left: 12px;
+      }
     }
     &--blue {
       top: 16px;
       right: 16px;
+
+      @include m.mq(sp) {
+        top: 4px;
+        right: 12px;
+      }
     }
     &--yellow {
       bottom: 16px;
       left: 16px;
+
+      @include m.mq(sp) {
+        bottom: 4px;
+        left: 12px;
+      }
     }
     &--green {
       bottom: 16px;
       right: 16px;
+
+      @include m.mq(sp) {
+        bottom: 4px;
+        right: 12px;
+      }
     }
   }
   &__contentWrapper {
@@ -254,6 +516,10 @@
     flex-basis: 85%;
     background-color: #fff;
     overflow: hidden;
+
+    @include m.mq(sp) {
+      padding: 3px 0;
+    }
     @at-root {
       &--eva#{&} {
         background-color: transparent;
@@ -268,6 +534,19 @@
     width: fit-content;
     font-weight: bold;
     font-size: 40px;
+
+    @include m.mq(pc) {
+      font-size: 24px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 24px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 16px;
+    }
+
 
     @at-root {
       &--eva#{&} {
