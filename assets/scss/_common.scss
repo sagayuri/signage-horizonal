@@ -1,3 +1,5 @@
+@use "mixin" as m;
+
 $misao-blue: #082d85;
 $black: #333333;
 $red: #aa0d0d;
@@ -16,6 +18,18 @@ body {
   height: 100vh;
   font-family: "Noto Sans JP", sans-serif;
   font-family: "Roboto", sans-serif;
-  overflow: hidden;
   color: $black;
+  overflow: hidden;
+
+  @include m.mq(pc) {
+    overflow: scroll;
+  }
+
+  @include m.mq(tab) {
+    overflow: scroll;
+  }
+
+  @include m.mq(sp) {
+    overflow: scroll;
+  }
 }
