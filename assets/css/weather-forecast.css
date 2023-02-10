@@ -136,7 +136,6 @@ body {
   }
 }
 .weatherForecast .header__title {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
@@ -580,7 +579,6 @@ body {
 }
 .weatherList--eva.weatherList .weatherList__dayOfWeather img {
   width: auto;
-  max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
   height: 100%;

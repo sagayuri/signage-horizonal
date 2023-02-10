@@ -278,7 +278,6 @@ body {
   }
 }
 .heatstroke.eva main .content_body .vigilance_level {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px 24px;
