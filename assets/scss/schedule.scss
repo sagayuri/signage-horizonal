@@ -8,6 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: scroll;
   @at-root {
     .default#{&} {
       background-image: url(../images/schedule/blackBoard_bg_base.jpg);
@@ -41,6 +42,7 @@
     }
 
     @include m.mq(tab) {
+      margin-bottom: 40px;
       padding: 16px;
     }
 
@@ -516,6 +518,10 @@
     flex-basis: 85%;
     background-color: #fff;
     overflow: hidden;
+
+    @include m.mq(tab) {
+      padding: 8px 0;
+    }
 
     @include m.mq(sp) {
       padding: 3px 0;

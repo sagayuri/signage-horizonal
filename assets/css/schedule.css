@@ -84,6 +84,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: scroll;
 }
 .default.schedule {
   background-image: url(../images/schedule/blackBoard_bg_base.jpg);
@@ -119,6 +120,7 @@ body {
 }
 @media screen and (min-width: 768px ) and (max-width: 1239px) {
   .schedule__header {
+    margin-bottom: 40px;
     padding: 16px;
   }
 }
@@ -620,6 +622,11 @@ body {
   flex-basis: 85%;
   background-color: #fff;
   overflow: hidden;
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .footer__info {
+    padding: 8px 0;
+  }
 }
 @media screen and (max-width: 767px) {
   .footer__info {
