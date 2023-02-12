@@ -100,6 +100,19 @@
     animation-name: blinking;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+
+    @include m.mq(pc) {
+      font-size: 56px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 56px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 24px;
+    }
+
     @at-root {
       &--blue#{&} {
         border: 5px solid #082d85;
