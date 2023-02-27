@@ -255,6 +255,7 @@
 
 //スケジュール欄
 .scheduleList {
+  height: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -399,7 +400,7 @@
 
 .footer {
   height: 15%;
-  margin: 32px 0;
+  margin: 24px 0;
 
   @include m.mq(pc) {
     height: 12%;
