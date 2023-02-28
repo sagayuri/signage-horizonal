@@ -141,12 +141,16 @@
   .dataWrapper {
     width: 90%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include m.mq(sp) {
+      top: 65%;
+    }
 
   }
 
@@ -215,10 +219,12 @@
       }
 
       @include m.mq(tab) {
+        line-height: 1.0;
         font-size: 220px;
       }
 
       @include m.mq(sp) {
+        line-height: 1.0;
         font-size: 120px;
       }
     }
@@ -387,6 +393,38 @@
 
       }
 
+      .siteName {
+
+        &__info {
+          margin: 56px auto 0;
+
+          @include m.mq(sp) {
+            padding: 4px 24px;
+            margin: 12px auto 0;
+          }
+        }
+
+        &__infoText {
+          font-size: 36px;
+          font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+          "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN",
+          "Hiragino Mincho ProN", sans-serif;
+
+          @include m.mq(pc) {
+            font-size: 32px;
+          }
+
+          @include m.mq(tab) {
+            font-size: 28px;
+          }
+
+          @include m.mq(sp) {
+            font-size: 14px;
+          }
+
+        }
+      }
+
       .dataWrapper {
         width: 75%;
         position: absolute;
@@ -399,14 +437,17 @@
 
         @include m.mq(pc) {
           width: 90%;
+          top: 55%;
         }
 
         @include m.mq(tab) {
           width: 90%;
+          top: 55%;
         }
 
         @include m.mq(sp) {
           width: 90%;
+          top: 55%;
         }
 
         .noiseWrapper {
@@ -484,5 +525,69 @@
         transform: translateX(-50%);
       }
     }
+  }
+}
+
+.siteName {
+
+  &__info {
+    width: 80%;
+    max-width: 911px;
+    padding: 20px 32px;
+    margin: 80px auto 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+
+    @include m.mq(pc) {
+      padding: 16px 32px;
+      margin: 56px auto 0;
+    }
+
+    @include m.mq(tab) {
+      padding: 16px 32px;
+      margin: 56px auto 0;
+    }
+
+    @include m.mq(sp) {
+      padding: 8px 24px;
+      margin: 16px auto 0;
+    }
+  }
+
+  &__infoBox {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  &__infoText {
+    width: fit-content;
+    font-weight: bold;
+    font-size: 40px;
+
+    @include m.mq(pc) {
+      font-size: 36px;
+    }
+
+    @include m.mq(tab) {
+      font-size: 32px;
+    }
+
+    @include m.mq(sp) {
+      font-size: 16px;
+    }
+}
+}
+
+.js-active {
+  animation: animate-banner 15s linear infinite;
+}
+
+@keyframes animate-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

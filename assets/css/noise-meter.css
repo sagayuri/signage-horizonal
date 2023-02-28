@@ -232,12 +232,17 @@ body {
 .noiseMeter .dataWrapper {
   width: 90%;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter .dataWrapper {
+    top: 65%;
+  }
 }
 .noiseMeter .noiseWrapper__title {
   width: 50%;
@@ -306,11 +311,13 @@ body {
 }
 @media screen and (min-width: 768px ) and (max-width: 1239px) {
   .noiseMeter .valueWrapper__strings {
+    line-height: 1;
     font-size: 220px;
   }
 }
 @media screen and (max-width: 767px) {
   .noiseMeter .valueWrapper__strings {
+    line-height: 1;
     font-size: 120px;
   }
 }
@@ -457,6 +464,34 @@ body {
     font-size: 40px;
   }
 }
+.noiseMeter--eva .siteName__info {
+  margin: 56px auto 0;
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .siteName__info {
+    padding: 4px 24px;
+    margin: 12px auto 0;
+  }
+}
+.noiseMeter--eva .siteName__infoText {
+  font-size: 36px;
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "游明朝体+36ポかな", "YuMincho +36p Kana", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", sans-serif;
+}
+@media screen and (min-width: 1240px ) and (max-width: 1500px) {
+  .noiseMeter--eva .siteName__infoText {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .noiseMeter--eva .siteName__infoText {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noiseMeter--eva .siteName__infoText {
+    font-size: 14px;
+  }
+}
 .noiseMeter--eva .dataWrapper {
   width: 75%;
   position: absolute;
@@ -470,16 +505,19 @@ body {
 @media screen and (min-width: 1240px ) and (max-width: 1500px) {
   .noiseMeter--eva .dataWrapper {
     width: 90%;
+    top: 55%;
   }
 }
 @media screen and (min-width: 768px ) and (max-width: 1239px) {
   .noiseMeter--eva .dataWrapper {
     width: 90%;
+    top: 55%;
   }
 }
 @media screen and (max-width: 767px) {
   .noiseMeter--eva .dataWrapper {
     width: 90%;
+    top: 55%;
   }
 }
 .noiseMeter--eva .dataWrapper .noiseWrapper__title {
@@ -556,4 +594,70 @@ body {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+}
+
+.siteName__info {
+  width: 80%;
+  max-width: 911px;
+  padding: 20px 32px;
+  margin: 80px auto 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+@media screen and (min-width: 1240px ) and (max-width: 1500px) {
+  .siteName__info {
+    padding: 16px 32px;
+    margin: 56px auto 0;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .siteName__info {
+    padding: 16px 32px;
+    margin: 56px auto 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .siteName__info {
+    padding: 8px 24px;
+    margin: 16px auto 0;
+  }
+}
+.siteName__infoBox {
+  display: inline-block;
+  white-space: nowrap;
+}
+.siteName__infoText {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: bold;
+  font-size: 40px;
+}
+@media screen and (min-width: 1240px ) and (max-width: 1500px) {
+  .siteName__infoText {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width: 1239px) {
+  .siteName__infoText {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .siteName__infoText {
+    font-size: 16px;
+  }
+}
+
+.js-active {
+  animation: animate-banner 15s linear infinite;
+}
+
+@keyframes animate-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
